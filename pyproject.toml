@@ -14,7 +14,13 @@ dependencies = [
     "mjlab",
     "ruff>=0.14.10",
     "viser>=1.0.24",
+    "wandb>=0.24.2",
 ]
+
+[project.optional-dependencies]
+# LAFAN1 download from the Hugging Face Hub (the W&B upload path ships with
+# mjlab, which already depends on wandb).
+data = ["huggingface-hub>=0.34"]
 
 [tool.uv.sources]
 mjlab = { path = "../mjlab_research", editable = true }

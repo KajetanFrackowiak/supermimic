@@ -11,6 +11,7 @@ from mjlab.envs import ManagerBasedRlEnvCfg
 from mjlab.tasks.registry import list_tasks, load_env_cfg
 
 import supermimic.tasks  # noqa: F401
+from supermimic.data.upload_motion import default_registry_name
 from supermimic.runners.ppo_runner import PpoRunner, PpoRunnerCfg
 from supermimic.scripts.train_utils import (
   create_env,
@@ -27,7 +28,8 @@ class TrainConfig:
   # Experiment & Environment
   num_envs: int = 1024
   device: str | None = None
-  registry_name: str | None = "supermimic/wandb-registry-motions/lafan_run1_subject5"
+  #: All 40 LAFAN1 clips at once; see ``train.py`` for the reasoning.
+  registry_name: str | None = default_registry_name()
   motion_file: str | None = None
 
   @staticmethod

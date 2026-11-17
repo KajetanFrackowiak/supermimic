@@ -218,3 +218,6 @@ __marimo__/
 **/logs/
 **/wandb/*
 **/artifacts/
+
+# Motion data: raw LAFAN1 CSVs and converted NPZ archives
+/data/
